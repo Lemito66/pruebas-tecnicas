@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
 import { books } from "../data/books";
+import { BasicExample } from "./CardInfo";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export function ListOfBooks() {
   return (
     <>
       <h1>Lista de libros</h1>
-      <ul>
+      <Row className="g-4">
         {books.library.map(({ book }) => {
-          const { title, pages, ISBN } = book;
+          const { cover, ISBN, title } = book;
           return (
-            <li key={ISBN}>
-              <h2>{title}</h2>
-              <p>{pages}</p>
-            </li>
+            <Col key={ISBN} xs={12} md={4}>
+              <BasicExample cover={cover} />
+            </Col>
           );
         })}
-      </ul>
+      </Row>
     </>
   );
 }
