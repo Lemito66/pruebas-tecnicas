@@ -7,12 +7,12 @@ import Col from "react-bootstrap/Col";
 export function ListOfBooks() {
   
   const [book, setBook] = useState(books.library);
-  //const [howManyBooks, setHowManyBooks] = useState(book.length);
+  const [howManyBooks, setHowManyBooks] = useState(book.length);
 
   const handleDeleteBook = (ISBN) => {
     const newBook = book.filter((book) => book.book.ISBN !== ISBN);
     setBook(newBook);
-    //setHowManyBooks(newBook.length);
+    setHowManyBooks(newBook.length);
   };
   return (
     <>
