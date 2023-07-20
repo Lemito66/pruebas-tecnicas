@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { books } from "../data/books";
-import { BasicExample } from "./CardInfo";
+import { CardPicture } from "./CardPicture";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { GENRES } from "../data/genres";
@@ -43,7 +43,7 @@ export function ListOfBooks() {
           return (
             <Col key={ISBN} xs={12} md={4}>
               <div onClick={() => handleDeleteBook(ISBN)}>
-                <BasicExample cover={cover} />
+                <CardPicture cover={cover} />
               </div>
             </Col>
           );
