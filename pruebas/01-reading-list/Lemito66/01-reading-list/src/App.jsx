@@ -1,7 +1,6 @@
 import { useState } from 'react'
 // import './App.css'
 import { ListOfBooks } from './components/listOfBooks'
-import { BasicExample } from './components/CardInfo'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
   return (
     <>
       <ListOfBooks />
-      {/* <BasicExample /> */}
     </>
   )
 }
