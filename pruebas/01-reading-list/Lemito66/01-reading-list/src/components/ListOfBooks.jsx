@@ -49,39 +49,41 @@ export function ListOfBooks() {
       <div>
         <Filter filterToGenre={filterToGenre} options={OPTIONS} />
       </div>
-      <button onClick={() => console.log(book, listOfReading)}>Da clic aqui</button>
+      <button onClick={() => console.log(book, listOfReading)}>
+        Da clic aqui
+      </button>
       <Container>
-      <Row>
-        <Col md={10}>
-          <div>
-            <Row className="g-4">
-              {book.map(({ book }) => {
-                const { cover, ISBN, title } = book;
-                return (
-                  <Col key={ISBN} xs={12} md={3}>
-                    <div onClick={() => handleAddBook(ISBN)}>
-                      <CardPicture cover={cover} />
-                    </div>
-                  </Col>
-                );
-              })}
-            </Row>
-          </div>
-        </Col>
-        <Col md={2} style={{ border: '1px solid black' }}>
-        {listOfReading.map(({ book }) => {
-                const { cover, ISBN, title } = book;
-                return (
-                  <Col key={ISBN} xs={12} md={3}>
-                    <div onClick={() => handleAddBook(ISBN)}>
-                      <CardPicture cover={cover} />
-                    </div>
-                  </Col>
-                );
-              })}
-        </Col>
-      </Row>
-    </Container>
+        <Row>
+          <Col md={10}>
+            <div>
+              <Row className="g-4">
+                {book.map(({ book }) => {
+                  const { cover, ISBN, title } = book;
+                  return (
+                    <Col key={ISBN} xs={12} md={3}>
+                      <div onClick={() => handleAddBook(ISBN)}>
+                        <CardPicture cover={cover} />
+                      </div>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </div>
+          </Col>
+          <Col md={2} style={{ border: "1px solid black" }}>
+            {listOfReading.map(({ book }) => {
+              const { cover, ISBN, title } = book;
+              return (
+                <Col key={ISBN} xs={12} md={3}>
+                  <div onClick={() => handleAddBook(ISBN)}>
+                    <CardPicture cover={cover} />
+                  </div>
+                </Col>
+              );
+            })}
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
